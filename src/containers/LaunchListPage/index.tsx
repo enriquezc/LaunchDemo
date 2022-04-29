@@ -2,7 +2,7 @@ import { connect, useDispatch } from 'react-redux'
 import { getLaunchesAction, addLaunchAction } from '../../actions';
 import LaunchListView from '../../components/LaunchListView';
 import { LaunchListState } from '../../reducers';
-import { Launch } from '../../types';
+import { Launch, NewLaunch } from '../../types';
 
 function mapStateToProps(state: LaunchListState) {
   return {
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch: any) => {
   return {
     // dispatching plain actions
     getLaunches: () => dispatch(getLaunchesAction()),
-    addLaunch: (launch: Launch) => dispatch(addLaunchAction(launch)),
+    addLaunch: (launch: NewLaunch) => dispatch(addLaunchAction(launch)),
   }
 }
 
